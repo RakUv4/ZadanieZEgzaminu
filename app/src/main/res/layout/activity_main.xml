@@ -57,7 +57,8 @@
             android:id="@+id/textview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text=""
+            android:textSize="30dp"
             android:layout_marginTop="30dp"
             android:textAlignment="center"/>
 

@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText haslo;
     private EditText powhaslo;
     private EditText email;
+    private String emailtext;
     private Button zatwierdz;
     private TextView textview;
 
@@ -40,11 +41,17 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(!haslo.getText().toString().equals(powhaslo.getText().toString())){
+                       emailtext = email.getText().toString();
+
+                        if(!emailtext.contains("@")){
+                            textview.setText("Twój email nie posiada @");
+                        } else if(!haslo.getText().toString().equals(powhaslo.getText().toString())){
                             textview.setText("Hasła się różnią!");
-                        } else{
-                            textview.setText("");
                         }
+                        else{
+                            textview.setText("witaj " + emailtext);
+                        }
+
 
 
                     }
